@@ -72,7 +72,7 @@ main {
 
 section {
     max-width: 800px;
-    margin: auto;
+    margin: 2rem auto;
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
@@ -87,6 +87,38 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
     font-size: 0.9rem;
+}
+
+/* ===== Courses Section ===== */
+.filters {
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: none;
+    background-color: #004d80;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.filter-btn:hover {
+    background-color: #0066a1;
+}
+
+#course-list {
+    list-style: none;
+    padding: 0;
+}
+
+.done {
+    background-color: #d4edda;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.25rem;
 }
 
 /* ===== Responsive Design ===== */
