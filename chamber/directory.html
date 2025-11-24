@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addis Ababa Chamber Directory</title>
+    <meta name="description" content="Directory of Addis Ababa Chamber of Commerce members">
+    <meta name="author" content="Zelalem Eshetu">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:title" content="Addis Ababa Chamber Directory">
+    <meta property="og:description" content="Discover the members of Addis Ababa Chamber of Commerce">
+    <meta property="og:image" content="images/favicon.ico">
+    <meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Addis Ababa Chamber of Commerce</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button id="menu-toggle">Menu</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="view-toggle">
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+        </section>
+
+        <section id="members-container" class="grid"></section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Zelalem Eshetu | WDD 231 | Last Modified: <span id="last-modified"></span></p>
+    </footer>
+
+    <script src="js/scripts.js" type="module"></script>
+</body>
+
+</html>

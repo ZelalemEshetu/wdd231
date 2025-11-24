@@ -1,0 +1,69 @@
+/* General Styles */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.navigation button {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Members Container */
+#members-container {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Grid & List View */
+.grid .member-card {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 1rem;
+}
+
+.list .member-card {
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+    padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .navigation.show ul {
+        display: flex;
+    }
+
+    .navigation button {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+}
