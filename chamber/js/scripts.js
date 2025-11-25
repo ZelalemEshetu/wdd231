@@ -1,24 +1,34 @@
-// Toggle Navigation Menu
+// Navigation toggle
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.querySelector('.navigation');
 menuToggle.addEventListener('click', () => nav.classList.toggle('show'));
 
-// Load members from JSON
+// Members container
 const membersContainer = document.getElementById('members-container');
+let membersData = [];
+
+// Load members from JSON
 async function loadMembers() {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
-    displayMembers(members, 'grid');
+    try {
+        const response = await fetch('data/members.json');
+        membersData = await response.json();
+        displayMembers(membersData, 'grid');
+    } catch (error) {
+        console.error('Failed to load members:', error);
+        membersContainer.innerHTML = '<p>Failed to load members. Please try again later.</p>';
+    }
 }
 
-// Display members in grid or list view
+// Display members
 function displayMembers(members, view) {
     membersContainer.className = view;
     membersContainer.innerHTML = '';
+
     members.forEach(member => {
         const card = document.createElement('div');
         card.className = 'member-card';
         card.innerHTML = `
+            ${member.image ? `<img src="images/${member.image}" alt="${member.name}" class="member-image">` : ''}
             <h2>${member.name}</h2>
             <p>${member.address}</p>
             <p>${member.phone}</p>
@@ -29,19 +39,11 @@ function displayMembers(members, view) {
     });
 }
 
-// Toggle View Buttons
-document.getElementById('grid-view').addEventListener('click', async () => {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
-    displayMembers(members, 'grid');
-});
-document.getElementById('list-view').addEventListener('click', async () => {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
-    displayMembers(members, 'list');
-});
+// View toggles
+document.getElementById('grid-view').addEventListener('click', () => displayMembers(membersData, 'grid'));
+document.getElementById('list-view').addEventListener('click', () => displayMembers(membersData, 'list'));
 
-// Footer Info
+// Footer info
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('last-modified').textContent = document.lastModified;
 
