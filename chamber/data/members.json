@@ -4,7 +4,7 @@
         "address": "123 Bole Rd, Addis Ababa",
         "phone": "+251911234567",
         "website": "https://www.addiscoffee.com",
-        "image": "images/coffee.png",
+        "image": "coffee.png",
         "membership": 3
     },
     {
@@ -12,7 +12,7 @@
         "address": "45 Megenagna, Addis Ababa",
         "phone": "+251912345678",
         "website": "https://www.ethiotech.com",
-        "image": "images/tech.png",
+        "image": "tech.png",
         "membership": 2
     },
     {
@@ -20,7 +20,7 @@
         "address": "78 Africa Ave, Addis Ababa",
         "phone": "+251913456789",
         "website": "https://www.blueniletours.com",
-        "image": "images/tour.png",
+        "image": "tour.png",
         "membership": 1
     },
     {
@@ -28,7 +28,7 @@
         "address": "12 Piazza, Addis Ababa",
         "phone": "+251914567890",
         "website": "https://www.harmonytextiles.com",
-        "image": "images/textiles.png",
+        "image": "textiles.png",
         "membership": 3
     },
     {
@@ -36,7 +36,7 @@
         "address": "56 Churchill Ave, Addis Ababa",
         "phone": "+251915678901",
         "website": "https://www.abebarealestate.com",
-        "image": "images/realestate.png",
+        "image": "realestate.png",
         "membership": 2
     },
     {
@@ -44,7 +44,7 @@
         "address": "90 Arat Kilo, Addis Ababa",
         "phone": "+251916789012",
         "website": "https://www.lalibelafoods.com",
-        "image": "images/foods.png",
+        "image": "foods.png",
         "membership": 1
     },
     {
@@ -52,7 +52,7 @@
         "address": "33 Churchill Rd, Addis Ababa",
         "phone": "+251917890123",
         "website": "https://www.addismotors.com",
-        "image": "images/motors.png",
+        "image": "motors.png",
         "membership": 3
     }
 ]

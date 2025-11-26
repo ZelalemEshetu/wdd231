@@ -10,7 +10,7 @@ let membersData = [];
 // Load members from JSON
 async function loadMembers() {
     try {
-        const response = await fetch('data/members.json');
+        const response = await fetch('data/members.json'); // matches your folder structure
         membersData = await response.json();
         displayMembers(membersData, 'grid');
     } catch (error) {
@@ -19,7 +19,7 @@ async function loadMembers() {
     }
 }
 
-// Display members
+// Display members in grid or list
 function displayMembers(members, view) {
     membersContainer.className = view;
     membersContainer.innerHTML = '';
@@ -39,7 +39,7 @@ function displayMembers(members, view) {
     });
 }
 
-// View toggles
+// Toggle views
 document.getElementById('grid-view').addEventListener('click', () => displayMembers(membersData, 'grid'));
 document.getElementById('list-view').addEventListener('click', () => displayMembers(membersData, 'list'));
 
