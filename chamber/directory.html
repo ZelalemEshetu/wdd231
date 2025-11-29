@@ -16,7 +16,6 @@
 
     <!-- Favicon -->
     <link rel="icon" href="images/myfavicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/myfavicon.png" type="image/png">
 
     <!-- Facebook Open Graph Meta Tags -->
     <meta property="og:title" content="Addis Ababa Chamber Directory">
@@ -26,6 +25,7 @@
 </head>
 
 <body>
+
     <!-- Navigation -->
     <nav class="navigation">
         <button id="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
@@ -48,20 +48,11 @@
     <footer>
         <p>&copy; <span id="year"></span> Zelalem Eshetu | WDD 231</p>
         <p>Last modified: <span id="last-modified"></span></p>
-        <p>Contact: zelalemeshetubeshah@gmail.com</p>
+        <p>Contact: <a href="mailto:zelalemeshetubeshah@gmail.com">zelalemeshetubeshah@gmail.com</a></p>
     </footer>
 
     <!-- JavaScript -->
     <script src="js/scripts.js"></script>
-    <script>
-        // Navigation toggle for mobile
-        const menuToggle = document.getElementById('menu-toggle');
-        const nav = document.querySelector('.navigation');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('show');
-        });
-    </script>
 </body>
 
 </html>
