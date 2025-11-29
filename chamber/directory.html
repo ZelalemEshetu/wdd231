@@ -8,33 +8,37 @@
     <meta name="description" content="Directory of Addis Ababa Chamber of Commerce members">
     <meta name="author" content="Zelalem Eshetu">
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:title" content="Addis Ababa Chamber Directory">
-    <meta property="og:description" content="Directory of Addis Ababa Chamber of Commerce members">
-    <meta property="og:image" content="images/myfavicon.ico">
-    <meta property="og:url" content="https://zelalemeshetu.github.io/wdd231/chamber/directory.html">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- Favicon -->
     <link rel="icon" href="images/myfavicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/myfavicon.png" type="image/png">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Addis Ababa Chamber Directory">
+    <meta property="og:description" content="Directory of Addis Ababa Chamber of Commerce members">
+    <meta property="og:image" content="images/myfavicon.png">
+    <meta property="og:url" content="https://zelalemeshetu.github.io/wdd231/chamber/directory.html">
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navigation">
-        <button id="menu-toggle">Menu</button>
-        <ul>
+        <button id="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="directory.html">Directory</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
         </ul>
     </nav>
 
     <!-- View Toggle Buttons -->
     <div class="view-toggle">
-        <button id="grid-view">Grid View</button>
-        <button id="list-view">List View</button>
+        <button id="grid-view" aria-label="Grid View">Grid View</button>
+        <button id="list-view" aria-label="List View">List View</button>
     </div>
 
     <!-- Members Container -->
@@ -44,10 +48,20 @@
     <footer>
         <p>&copy; <span id="year"></span> Zelalem Eshetu | WDD 231</p>
         <p>Last modified: <span id="last-modified"></span></p>
+        <p>Contact: zelalemeshetubeshah@gmail.com</p>
     </footer>
 
     <!-- JavaScript -->
     <script src="js/scripts.js"></script>
+    <script>
+        // Navigation toggle for mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('.navigation');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
 </body>
 
 </html>

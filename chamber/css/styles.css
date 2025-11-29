@@ -1,4 +1,6 @@
-/* General Styles */
+/* =========================
+   General Styles
+========================= */
 body {
     background-color: #f0f0f0;
     color: #333;
@@ -7,7 +9,9 @@ body {
     margin: 0;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 header {
     background-color: #004080;
     color: white;
@@ -15,20 +19,49 @@ header {
 }
 
 header h1 {
-    margin-bottom: 0.5rem;
+    margin: 0;
 }
 
-/* Navigation */
+/* =========================
+   Navigation
+========================= */
+.navigation {
+    background-color: #004080;
+    padding: 0.5rem 1rem;
+}
+
 .navigation ul {
     display: flex;
     gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation ul li a.active {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .navigation button {
     display: none;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
 footer {
     background-color: #222;
     color: #eee;
@@ -36,34 +69,50 @@ footer {
     padding: 1rem;
 }
 
-/* Members Container */
+/* =========================
+   Members Container
+========================= */
 #members-container {
     padding: 1rem;
     gap: 1rem;
 }
 
-/* Grid view */
+/* =========================
+   Grid View
+========================= */
 #members-container.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
-/* Member Card */
+/* =========================
+   Member Card
+========================= */
 .member-card {
     border: 1px solid #ccc;
     background-color: white;
     padding: 1rem;
     box-sizing: border-box;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.member-card img.member-image {
+.member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img.member-logo {
     max-width: 100%;
     height: auto;
     margin-bottom: 0.5rem;
+    border-radius: 4px;
 }
 
-/* List view */
+/* =========================
+   List View
+========================= */
 #members-container.list {
     display: block;
 }
@@ -74,7 +123,9 @@ footer {
     margin-bottom: 1rem;
 }
 
-/* Responsive Navigation */
+/* =========================
+   Responsive Navigation
+========================= */
 @media (max-width: 768px) {
     .navigation ul {
         flex-direction: column;
@@ -88,5 +139,21 @@ footer {
     .navigation button {
         display: inline-block;
         margin-top: 0.5rem;
+    }
+}
+
+/* =========================
+   Mobile Adjustments
+========================= */
+@media (max-width: 480px) {
+    .view-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .view-toggle button {
+        width: 100%;
     }
 }
