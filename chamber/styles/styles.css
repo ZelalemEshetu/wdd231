@@ -1,0 +1,211 @@
+/* =========================
+   General Styles
+========================= */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* =========================
+   Navigation
+========================= */
+.navigation {
+    background-color: #004080;
+    padding: 0.5rem 1rem;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation ul li a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navigation button {
+    display: none;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* =========================
+   Members Container
+========================= */
+#members-container {
+    padding: 1rem;
+    gap: 1rem;
+}
+
+/* =========================
+   Grid View
+========================= */
+#members-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* =========================
+   Member Card
+========================= */
+.member-card {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img.member-logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+/* =========================
+   List View
+========================= */
+#members-container.list {
+    display: block;
+}
+
+.list .member-card {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* =========================
+   Responsive Navigation
+========================= */
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .navigation.show ul {
+        display: flex;
+    }
+
+    .navigation button {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+}
+
+/* =========================
+   Mobile Adjustments
+========================= */
+@media (max-width: 480px) {
+    .view-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .view-toggle button {
+        width: 100%;
+    }
+}
+
+/* ===== WEATHER SECTION ===== */
+.weather {
+    background: #e0f0ff;
+    /* light blue background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather h2 {
+    margin-bottom: 15px;
+    color: #0078D7;
+}
+
+.weather p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.weather ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.weather ul li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .weather {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .weather h2 {
+        font-size: 1.5rem;
+    }
+
+    .weather p {
+        font-size: 1rem;
+    }
+}

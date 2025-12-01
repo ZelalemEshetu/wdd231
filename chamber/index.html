@@ -5,80 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addis Ababa Chamber Home</title>
-    <meta name="description" content="Welcome to the Addis Ababa Chamber of Commerce">
+    <meta name="description"
+        content="Welcome to the Addis Ababa Chamber of Commerce, connecting businesses and growing communities.">
     <meta name="author" content="Zelalem Eshetu">
 
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Addis Ababa Chamber of Commerce | Connecting Businesses">
+    <meta property="og:description"
+        content="Join the Addis Ababa Chamber of Commerce to network, grow your business, and strengthen the local economy.">
+    <meta property="og:image" content="https://zelalemeshetu.github.io/wdd231/images/hero.jpeg">
+    <meta property="og:url" content="https://zelalemeshetu.github.io/wdd231/chamber/index.html">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/myfavicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navigation">
-        <button id="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="directory.html">Directory</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html">Join the Chamber</a>
+            <a href="mailto:zelalemeshetubeshah@gmail.com">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="images/hero.jpeg" alt="Chamber Hero Image">
-        <div class="hero-overlay">
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="images/hero.jpeg" alt="Chamber Hero Image">
             <h1>Welcome to the Addis Ababa Chamber of Commerce</h1>
-            <p>Connecting businesses, growing communities</p>
             <a href="join.html" class="cta-button">Join the Chamber</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Current Events Section -->
-    <section class="current-events">
-        <h2>Current Events</h2>
-        <ul>
-            <li>Annual Business Networking - Dec 15, 2025</li>
-            <li>Chamber Holiday Gala - Dec 22, 2025</li>
-        </ul>
-    </section>
+        <!-- Current Events -->
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <p>Annual Business Networking - Dec 15, 2025</p>
+            <p>Chamber Holiday Gala - Dec 22, 2025</p>
+        </section>
 
-    <!-- Weather Section -->
-    <section class="weather">
-        <h2>Current Weather in Addis Ababa</h2>
-        <p id="weather-desc">Loading weather...</p>
-        <p id="weather-temp"></p>
-        <h3>3-Day Forecast</h3>
-        <ul id="forecast"></ul>
-    </section>
+        <!-- Weather Section -->
+        <section class="weather">
+            <h2>Weather in Addis Ababa</h2>
+            <p id="weather-desc"></p>
+            <p id="weather-temp"></p>
+            <ul id="forecast"></ul>
+        </section>
 
-    <!-- Spotlight Members Section -->
-    <section class="spotlights">
-        <h2>Featured Members</h2>
-        <div id="spotlight-container" class="grid">
-            <!-- Spotlight cards will load here dynamically via JS -->
-        </div>
-    </section>
+        <!-- Company Spotlights -->
+        <section class="spotlights">
+            <h2>Member Spotlights</h2>
+            <ul id="spotlight-list">
+                <!-- JS will fill spotlight cards here -->
+            </ul>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="year"></span> Zelalem Eshetu | WDD 231</p>
-        <p>Last modified: <span id="last-modified"></span></p>
-        <p>Contact: <a href="mailto:zelalemeshetubeshah@gmail.com">zelalemeshetubeshah@gmail.com</a></p>
+        <p>&copy; 2025 Addis Ababa Chamber of Commerce</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/home.js"></script>
-    <script>
-        // Footer dynamic info
-        document.getElementById('year').textContent = new Date().getFullYear();
-        document.getElementById('last-modified').textContent = document.lastModified;
-    </script>
+    <!-- Scripts -->
+    <script src="scripts/home.js" defer></script>
+
 </body>
 
 </html>
