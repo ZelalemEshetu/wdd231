@@ -1,7 +1,7 @@
 // ========================
 // WEATHER SECTION WITH FALLBACK
 // ========================
-const weatherApiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // <-- Replace with your actual API key
+const weatherApiKey = '918a029e1018cbc9beaf59fd3eb43af7'; // <-- my API KEY-->
 const city = 'Addis Ababa,ET'; // City name and country code
 const weatherDescEl = document.getElementById('weather-desc');
 const weatherTempEl = document.getElementById('weather-temp');
