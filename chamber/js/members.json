@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "company": "Addis Ababa Coffee Co.",
+        "logo": "images/coffee.png",
+        "phone": "+251911234567",
+        "address": "123 Bole Rd, Addis Ababa",
+        "website": "https://www.addisababa-coffee.com",
+        "membership": "Gold"
+    },
+    {
+        "id": 2,
+        "company": "Ethio Tech Solutions",
+        "logo": "images/tech.png",
+        "phone": "+251912345678",
+        "address": "45 Megenagna, Addis Ababa",
+        "website": "https://www.ethiotech.com",
+        "membership": "Silver"
+    },
+    {
+        "id": 3,
+        "company": "Blue Nile Tours",
+        "logo": "images/tours.png",
+        "phone": "+251913456789",
+        "address": "78 Africa Ave, Addis Ababa",
+        "website": "https://www.blueniletours.com",
+        "membership": "Member"
+    },
+    {
+        "id": 4,
+        "company": "Harmony Textiles",
+        "logo": "images/textiles.png",
+        "phone": "+251914567890",
+        "address": "12 Piazza, Addis Ababa",
+        "website": "https://www.harmonytextiles.com",
+        "membership": "Gold"
+    },
+    {
+        "id": 5,
+        "company": "Abeba Real Estate",
+        "logo": "images/realestate.png",
+        "phone": "+251915678901",
+        "address": "56 Churchill Ave, Addis Ababa",
+        "website": "https://www.abebarealestate.com",
+        "membership": "Silver"
+    },
+    {
+        "id": 6,
+        "company": "Lalibela Foods",
+        "logo": "images/foods.png",
+        "phone": "+251916789012",
+        "address": "90 Arat Kilo, Addis Ababa",
+        "website": "https://www.lalibelafoods.com",
+        "membership": "Member"
+    },
+    {
+        "id": 7,
+        "company": "Addis Motors",
+        "logo": "images/motors.png",
+        "phone": "+251917890123",
+        "address": "33 Churchill Rd, Addis Ababa",
+        "website": "https://www.addismotors.com",
+        "membership": "Gold"
+    }
+]

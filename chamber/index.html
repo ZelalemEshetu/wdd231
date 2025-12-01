@@ -31,8 +31,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="images/hero.jpg" alt="Chamber Hero Image">
-        <a href="join.html" class="cta-button">Join the Chamber</a>
+        <img src="images/hero.jpeg" alt="Chamber Hero Image">
+        <div class="hero-overlay">
+            <h1>Welcome to the Addis Ababa Chamber of Commerce</h1>
+            <p>Connecting businesses, growing communities</p>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </div>
     </section>
 
     <!-- Current Events Section -->
@@ -56,7 +60,9 @@
     <!-- Spotlight Members Section -->
     <section class="spotlights">
         <h2>Featured Members</h2>
-        <div id="spotlight-container" class="grid"></div>
+        <div id="spotlight-container" class="grid">
+            <!-- Spotlight cards will load here dynamically via JS -->
+        </div>
     </section>
 
     <!-- Footer -->
@@ -68,6 +74,11 @@
 
     <!-- JavaScript -->
     <script src="js/home.js"></script>
+    <script>
+        // Footer dynamic info
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 
 </html>
