@@ -4,52 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
+    <title>Thank You!</title>
     <link rel="stylesheet" href="styles/join.css">
 </head>
 
 <body>
     <header>
-        <h1>Thank You!</h1>
+        <h1>Thank You for Joining!</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html">Join</a>
+        </nav>
     </header>
 
-    <main style="padding:2rem; max-width:600px; margin:auto;">
-        <h2>Your application was submitted successfully.</h2>
-
-        <div class="results-box" style="
-        background:white;
-        padding:1.5rem;
-        border-radius:12px;
-        margin-top:1rem;
-    ">
-            <h3>Submitted Information</h3>
-
-            <p><strong>First Name:</strong> <span id="fn"></span></p>
-            <p><strong>Last Name:</strong> <span id="ln"></span></p>
-            <p><strong>Email:</strong> <span id="em"></span></p>
-            <p><strong>Mobile:</strong> <span id="ph"></span></p>
-            <p><strong>Organization:</strong> <span id="org"></span></p>
-            <p><strong>Timestamp:</strong> <span id="ts"></span></p>
-        </div>
-
-        <a href="index.html" style="display:block;margin-top:20px;font-weight:bold;">Return Home</a>
+    <main>
+        <h2>Your Submitted Information</h2>
+        <ul id="submitted-info"></ul>
     </main>
+
+    <footer>
+        <p>&copy; Brigham Young University-Idaho | All rights reserved</p>
+    </footer>
 
     <script>
         const params = new URLSearchParams(window.location.search);
-
-        document.getElementById("fn").textContent = params.get("firstname");
-        document.getElementById("ln").textContent = params.get("lastname");
-        document.getElementById("em").textContent = params.get("email");
-        document.getElementById("ph").textContent = params.get("phone");
-        document.getElementById("org").textContent = params.get("organization");
-        document.getElementById("ts").textContent = params.get("timestamp");
+        const fields = ['firstname', 'lastname', 'email', 'phone', 'organization', 'timestamp'];
+        const ul = document.getElementById('submitted-info');
+        fields.forEach(f => {
+            const li = document.createElement('li');
+            li.textContent = f.charAt(0).toUpperCase() + f.slice(1) + ": " + (params.get(f) || '');
+            ul.appendChild(li);
+        });
     </script>
-
-    <footer>
-        <p>&copy; 2025 Addis Ababa Chamber of Commerce</p>
-    </footer>
-
 </body>
 
 </html>
