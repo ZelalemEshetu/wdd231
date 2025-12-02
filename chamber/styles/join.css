@@ -1,0 +1,157 @@
+/* ===== GENERAL PAGE LAYOUT ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f2f2f2;
+    color: #222;
+}
+
+header,
+footer {
+    padding: 1rem;
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.join-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+/* ===== FORM SECTION ===== */
+.form-section {
+    flex: 1 1 300px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.submit-btn {
+    padding: 10px;
+    background: #0a3d62;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #075180;
+}
+
+/* ===== MEMBERSHIP CARDS ===== */
+.membership-section {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.9s ease forwards;
+    opacity: 0;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.card a {
+    color: #0a3d62;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MODALS ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+}
+
+.modal:target {
+    display: block;
+}
+
+.modal-box {
+    max-width: 400px;
+    background: white;
+    margin: auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.close-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0a3d62;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 800px) {
+    .membership-section {
+        flex-direction: column;
+    }
+}
