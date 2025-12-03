@@ -124,3 +124,26 @@ input[type="submit"] {
     border: none;
     border-radius: 4px;
 }
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #00539f;
+    color: white;
+}
+
+footer .social {
+    margin-top: 0.5rem;
+}
+
+footer .social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.3rem;
+    transition: color 0.3s;
+}
+
+footer .social a:hover {
+    color: #ffcc00;
+    /* highlight on hover */
+}
