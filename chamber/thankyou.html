@@ -4,46 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You!</title>
+    <title>Thank You - Addis Ababa Town Chamber</title>
     <link rel="stylesheet" href="styles/join.css">
 </head>
 
 <body>
     <header>
-        <h1>Thank You for Joining!</h1>
+        <div class="logo">Addis Ababa Town Chamber</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="directory.html">Directory</a>
-            <a href="join.html">Join</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Your Submitted Information</h2>
-        <ul id="submitted-info"></ul>
+        <h1>Thank You for Joining!</h1>
+        <p>We have received your membership application. Here is the information you submitted:</p>
+
+        <div class="submitted-info">
+            <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+            <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+            <p><strong>Organization Name:</strong> <span id="displayOrg"></span></p>
+            <p><strong>Submission Date:</strong> <span id="displayDate"></span></p>
+        </div>
+
+        <p>We will review your application and contact you shortly!</p>
     </main>
 
     <footer>
-        <p>&copy; Brigham Young University-Idaho | All rights reserved</p>
+        <p>&copy; Addis Ababa Town Chamber | All rights reserved</p>
         <div class="social">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-            |
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram">Instagram</a> |
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> |
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> |
+            <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
         </div>
     </footer>
 
-
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const fields = ['firstname', 'lastname', 'email', 'phone', 'organization', 'timestamp'];
-        const ul = document.getElementById('submitted-info');
-        fields.forEach(f => {
-            const li = document.createElement('li');
-            li.textContent = f.charAt(0).toUpperCase() + f.slice(1) + ": " + (params.get(f) || '');
-            ul.appendChild(li);
-        });
+        // Grab form data from URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        document.getElementById('displayFirstName').textContent = urlParams.get('firstName') || '';
+        document.getElementById('displayLastName').textContent = urlParams.get('lastName') || '';
+        document.getElementById('displayEmail').textContent = urlParams.get('email') || '';
+        document.getElementById('displayPhone').textContent = urlParams.get('phone') || '';
+        document.getElementById('displayOrg').textContent = urlParams.get('organization') || '';
+        document.getElementById('displayDate').textContent = urlParams.get('timestamp') || '';
     </script>
 </body>
 

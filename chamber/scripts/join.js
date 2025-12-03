@@ -1,60 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Timestamp
-    const ts = document.getElementById("timestamp");
-    if (ts) ts.value = new Date().toISOString();
-
-    // Modal functionality
-    let lastFocused = null;
-
-    function openModal(id, trigger) {
-        const modal = document.getElementById(id);
-        if (!modal) return;
-        lastFocused = trigger || document.activeElement;
-        modal.setAttribute("aria-hidden", "false");
-        const box = modal.querySelector(".modal-box");
-        if (box) box.focus();
-        history.pushState(null, "", "#" + id);
-    }
-
-    function closeModal(modal) {
-        if (!modal) return;
-        modal.setAttribute("aria-hidden", "true");
-        if (location.hash === "#" + modal.id) {
-            history.pushState("", document.title, window.location.pathname + window.location.search);
-        }
-        if (lastFocused) lastFocused.focus();
-    }
-
-    document.querySelectorAll("a[href^='#']").forEach(a => {
-        const id = a.getAttribute("href").slice(1);
-        const modal = document.getElementById(id);
-        if (modal) {
-            a.addEventListener("click", e => {
-                e.preventDefault();
-                openModal(id, a);
-            });
-        }
-    });
-
-    document.addEventListener("click", e => {
-        const close = e.target.closest("[data-close]");
-        if (close) {
-            const modal = close.closest(".modal");
-            closeModal(modal);
-        }
-    });
-
-    document.addEventListener("keydown", e => {
-        if (e.key === "Escape") {
-            const modal = document.querySelector(".modal[aria-hidden='false']");
-            closeModal(modal);
-        }
-    });
-
-    document.querySelectorAll(".modal").forEach(modal => {
-        modal.addEventListener("click", e => {
-            if (e.target === modal) closeModal(modal);
-        });
-    });
-
+// Set current timestamp in hidden field
+window.addEventListener('DOMContentLoaded', () => {
+    const timestampField = document.getElementById('timestamp');
+    const now = new Date();
+    timestampField.value = now.toLocaleString(); // e.g., "12/3/2025, 10:45:30 AM"
 });
+
+// Modal functionality
+const cards = document.querySelectorAll('.card');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close');
+
+cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalId = card.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) modal.style.display = 'block';
+    });
+});
+
+closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.parentElement.parentElement.style.display = 'none';
+    });
+});
+
+// Close modal when clicking outside modal content
+window.addEventListener('click', (e) => {
+    modals.forEach(modal => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+

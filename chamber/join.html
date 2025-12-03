@@ -4,174 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the Chamber</title>
+    <title>Join the Addis Ababa Town Chamber</title>
     <link rel="stylesheet" href="styles/join.css">
 </head>
 
 <body>
     <header>
-        <h1>Welcome to the Addis Ababa Chamber of Commerce</h1>
+        <div class="logo">Addis Ababa Town Chamber</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="directory.html">Directory</a>
-            <a href="join.html">Join</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Membership Application Form</h2>
-        <form method="get" action="thankyou.html">
-            <label>
-                First Name:
-                <input type="text" name="firstname" required title="Enter your first name" autocomplete="given-name">
-            </label>
+        <h1>Join the Addis Ababa Town Chamber</h1>
+        <p>Complete the form below to become a member.</p>
 
-            <label>
-                Last Name:
-                <input type="text" name="lastname" required title="Enter your last name" autocomplete="family-name">
+        <form id="joinForm" method="get" action="thankyou.html">
+            <label>First Name
+                <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required>
             </label>
-
-            <label>
-                Organizational Title:
-                <input type="text" name="title" title="Enter your title" pattern="[A-Za-z\s-]{7,}"
-                    autocomplete="organization-title">
+            <label>Last Name
+                <input type="text" name="lastName" title="Enter your last name" autocomplete="family-name" required>
             </label>
-
-            <label>
-                Email:
-                <input type="email" name="email" required title="Enter your email" placeholder="example@email.com"
-                    autocomplete="email">
+            <label>Title in Organization
+                <input type="text" name="orgTitle" title="Enter your organizational title"
+                    autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}">
             </label>
-
-            <label>
-                Mobile Phone:
-                <input type="tel" name="phone" required title="Enter your phone number" autocomplete="tel">
+            <label>Email
+                <input type="email" name="email" title="Enter your email" autocomplete="email"
+                    placeholder="example@domain.com" required>
             </label>
-
-            <label>
-                Organization Name:
-                <input type="text" name="organization" required title="Enter organization name"
-                    autocomplete="organization">
+            <label>Mobile Phone
+                <input type="tel" name="phone" title="Enter your mobile phone" autocomplete="tel" required>
             </label>
-
-            <label>
-                Membership Level:
-                <select name="membership" required title="Select membership level">
+            <label>Organization Name
+                <input type="text" name="organization" title="Enter your organization name" autocomplete="organization"
+                    required>
+            </label>
+            <label>Membership Level
+                <select name="membership" title="Select membership level" required>
                     <option value="np">NP Membership (No Fee)</option>
                     <option value="bronze">Bronze Membership</option>
                     <option value="silver">Silver Membership</option>
                     <option value="gold">Gold Membership</option>
                 </select>
             </label>
-
-            <label>
-                Organization Description:
+            <label>Organization Description
                 <textarea name="description" title="Describe your organization"></textarea>
             </label>
-
-            <input type="hidden" id="timestamp" name="timestamp">
-
-            <input type="submit" value="Apply Now" title="Submit membership application">
+            <input type="hidden" name="timestamp" id="timestamp">
+            <input type="submit" value="Submit Application">
         </form>
 
-        <section class="membership-cards">
-            <h2>Membership Levels</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>NP Membership</h3>
-                    <p>Free membership for non-profit organizations</p>
-                    <a href="#np-modal">More Info</a>
-                </div>
-
-                <div class="card">
-                    <h3>Bronze Membership</h3>
-                    <p>Basic membership with limited benefits</p>
-                    <a href="#bronze-modal">More Info</a>
-                </div>
-
-                <div class="card">
-                    <h3>Silver Membership</h3>
-                    <p>Enhanced benefits for active organizations</p>
-                    <a href="#silver-modal">More Info</a>
-                </div>
-
-                <div class="card">
-                    <h3>Gold Membership</h3>
-                    <p>Full benefits including advertising and special events</p>
-                    <a href="#gold-modal">More Info</a>
-                </div>
-            </div>
+        <section class="cards">
+            <div class="card" data-modal="modal-np">NP Membership <a href="#">More Info</a></div>
+            <div class="card" data-modal="modal-bronze">Bronze Membership <a href="#">More Info</a></div>
+            <div class="card" data-modal="modal-silver">Silver Membership <a href="#">More Info</a></div>
+            <div class="card" data-modal="modal-gold">Gold Membership <a href="#">More Info</a></div>
         </section>
 
         <!-- Modals -->
-        <div class="modal" id="np-modal" role="dialog" aria-modal="true" aria-labelledby="np-modal-title"
-            aria-hidden="true" data-modal="np-modal">
-            <div class="modal-box" tabindex="-1">
-                <h3 id="np-modal-title">NP Membership Benefits</h3>
+        <div class="modal" id="modal-np">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>NP Membership Benefits</h2>
                 <ul>
-                    <li>No membership fee</li>
-                    <li>Community networking opportunities</li>
-                    <li>Access to events and workshops</li>
+                    <li>Directory Listing</li>
+                    <li>Community Networking</li>
                 </ul>
-                <button class="close-btn" data-close>Close</button>
             </div>
         </div>
 
-        <div class="modal" id="bronze-modal" role="dialog" aria-modal="true" aria-labelledby="bronze-modal-title"
-            aria-hidden="true" data-modal="bronze-modal">
-            <div class="modal-box" tabindex="-1">
-                <h3 id="bronze-modal-title">Bronze Membership Benefits</h3>
+        <div class="modal" id="modal-bronze">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
                 <ul>
-                    <li>Basic listing on directory</li>
-                    <li>Invitations to chamber events</li>
-                    <li>Quarterly newsletter</li>
+                    <li>All NP Benefits</li>
+                    <li>Event Participation</li>
                 </ul>
-                <button class="close-btn" data-close>Close</button>
             </div>
         </div>
 
-        <div class="modal" id="silver-modal" role="dialog" aria-modal="true" aria-labelledby="silver-modal-title"
-            aria-hidden="true" data-modal="silver-modal">
-            <div class="modal-box" tabindex="-1">
-                <h3 id="silver-modal-title">Silver Membership Benefits</h3>
+        <div class="modal" id="modal-silver">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Silver Membership Benefits</h2>
                 <ul>
-                    <li>All Bronze benefits</li>
-                    <li>Spotlight position on homepage</li>
-                    <li>Discounts for events and training</li>
+                    <li>All Bronze Benefits</li>
+                    <li>Training Opportunities</li>
+                    <li>Spotlight in Newsletter</li>
                 </ul>
-                <button class="close-btn" data-close>Close</button>
             </div>
         </div>
 
-        <div class="modal" id="gold-modal" role="dialog" aria-modal="true" aria-labelledby="gold-modal-title"
-            aria-hidden="true" data-modal="gold-modal">
-            <div class="modal-box" tabindex="-1">
-                <h3 id="gold-modal-title">Gold Membership Benefits</h3>
+        <div class="modal" id="modal-gold">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Gold Membership Benefits</h2>
                 <ul>
-                    <li>All Silver benefits</li>
-                    <li>Priority advertising</li>
-                    <li>Exclusive networking events</li>
-                    <li>Featured spot in newsletters and social media</li>
+                    <li>All Silver Benefits</li>
+                    <li>Advertising on Homepage</li>
+                    <li>Discounts to Events</li>
                 </ul>
-                <button class="close-btn" data-close>Close</button>
             </div>
         </div>
-
     </main>
 
     <footer>
-        <p>&copy; Brigham Young University-Idaho | All rights reserved</p>
+        <p>&copy; Addis Ababa Town Chamber | All rights reserved</p>
         <div class="social">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-            |
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram">Instagram</a> |
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> |
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> |
+            <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
         </div>
     </footer>
 
-
-    <script src="scripts/join.js"></script>
+    <script src="scripts/join.js" defer></script>
 </body>
 
 </html>
