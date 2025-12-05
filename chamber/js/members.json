@@ -2,7 +2,7 @@
     {
         "id": 1,
         "company": "Addis Ababa Coffee Co.",
-        "logo": "images/coffee.png",
+        "logo": "images/coffee.webp",
         "phone": "+251911234567",
         "address": "123 Bole Rd, Addis Ababa",
         "website": "https://www.addisababa-coffee.com",
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "company": "Ethio Tech Solutions",
-        "logo": "images/tech.png",
+        "logo": "images/tech.webp",
         "phone": "+251912345678",
         "address": "45 Megenagna, Addis Ababa",
         "website": "https://www.ethiotech.com",
@@ -20,7 +20,7 @@
     {
         "id": 3,
         "company": "Blue Nile Tours",
-        "logo": "images/tours.png",
+        "logo": "images/tours.webp",
         "phone": "+251913456789",
         "address": "78 Africa Ave, Addis Ababa",
         "website": "https://www.blueniletours.com",
@@ -29,7 +29,7 @@
     {
         "id": 4,
         "company": "Harmony Textiles",
-        "logo": "images/textiles.png",
+        "logo": "images/textiles.webp",
         "phone": "+251914567890",
         "address": "12 Piazza, Addis Ababa",
         "website": "https://www.harmonytextiles.com",
@@ -38,7 +38,7 @@
     {
         "id": 5,
         "company": "Abeba Real Estate",
-        "logo": "images/realestate.png",
+        "logo": "images/realestate.webp",
         "phone": "+251915678901",
         "address": "56 Churchill Ave, Addis Ababa",
         "website": "https://www.abebarealestate.com",
@@ -47,7 +47,7 @@
     {
         "id": 6,
         "company": "Lalibela Foods",
-        "logo": "images/foods.png",
+        "logo": "images/foods.webp",
         "phone": "+251916789012",
         "address": "90 Arat Kilo, Addis Ababa",
         "website": "https://www.lalibelafoods.com",
@@ -56,10 +56,19 @@
     {
         "id": 7,
         "company": "Addis Motors",
-        "logo": "images/motors.png",
+        "logo": "images/motors.webp",
         "phone": "+251917890123",
         "address": "33 Churchill Rd, Addis Ababa",
         "website": "https://www.addismotors.com",
         "membership": "Gold"
+    },
+    {
+        "id": 8,
+        "company": "Sheger Book Store",
+        "logo": "images/bookstore.webp",
+        "phone": "+251918901234",
+        "address": "21 Sarbet, Addis Ababa",
+        "website": "https://www.sheberbooks.com",
+        "membership": "Member"
     }
 ]

@@ -1,90 +1,86 @@
+/* GENERAL */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #1a4b8c;
+    color: white;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: none;
+    flex-direction: column;
     padding: 0;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    background: #004d7a;
+nav ul li {
+    margin: 0.5rem 0;
 }
 
-nav a {
+#menu-btn {
+    background: none;
+    border: none;
     color: white;
-    text-decoration: none;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
-nav a.active {
-    border-bottom: 2px solid yellow;
-}
-
-/* Cards */
-.cards {
+/* MOBILE LAYOUT */
+.grid-container {
     display: grid;
     gap: 1.2rem;
-    padding: 1.2rem;
+    padding: 1.5rem;
 }
 
-/* MOBILE layout (1 column) */
-@media (max-width: 600px) {
-    .cards {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "card1" "card2" "card3" "card4"
-            "card5" "card6" "card7" "card8";
-    }
-}
-
-/* TABLET layout (2 columns) */
-@media (min-width: 601px) and (max-width: 900px) {
-    .cards {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "card1 card2"
-            "card3 card4"
-            "card5 card6"
-            "card7 card8";
-    }
-}
-
-/* DESKTOP layout (4 columns) */
-@media (min-width: 901px) {
-    .cards {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas:
-            "card1 card2 card3 card4"
-            "card5 card6 card7 card8";
-    }
-
-    /* Hover effect desktop only */
-    .cards img:hover {
-        transform: scale(1.05);
-        transition: 0.3s;
-    }
-}
-
+/* CARD */
 .card {
-    background: #ffffff;
+    background: #fff;
+    border-radius: 12px;
     padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
-/* Learn more button */
-.card button {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    width: 100%;
-    background: #004d7a;
-    color: white;
-    border: none;
-    border-radius: 6px;
+/* DESKTOP */
+@media (min-width: 700px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    #menu-btn {
+        display: none;
+    }
+
+    /* Named Grid Areas */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "c1 c2 c3"
+            "c4 c5 c6"
+            "c7 c8 c9";
+    }
+
+    .card:hover img {
+        scale: 1.06;
+        transition: 0.3s;
+    }
 }
