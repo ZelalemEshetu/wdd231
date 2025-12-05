@@ -39,8 +39,8 @@ fetch("data/members.json")
                 <p><strong>Address:</strong> ${item.address}</p>
                 <p><strong>Phone:</strong> ${item.phone}</p>
                 <p><strong>Membership:</strong> ${item.membership}</p>
-                <a href="${item.website}" target="_blank" class="learn-btn">Learn More</a>
-            `;
+                <a href="${item.website}" target="_blank" class="learn-btn">Learn More about ${item.company}</a> `;
+
             container.appendChild(card);
         });
     })
