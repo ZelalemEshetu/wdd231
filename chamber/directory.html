@@ -4,56 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Addis Ababa Chamber Directory</title>
-    <meta name="description" content="Directory of Addis Ababa Chamber of Commerce members">
-    <meta name="author" content="Zelalem Eshetu">
-
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/myfavicon.ico" type="image/x-icon">
-
-    <!-- Facebook Open Graph Meta Tags -->
-    <meta property="og:title" content="Addis Ababa Chamber Directory">
-    <meta property="og:description" content="Directory of Addis Ababa Chamber of Commerce members">
-    <meta property="og:image" content="images/myfavicon.png">
-    <meta property="og:url" content="https://zelalemeshetu.github.io/wdd231/chamber/directory.html">
+    <title>Directory | Addis Ababa Chamber of Commerce</title>
+    <meta name="description"
+        content="Directory of member companies of the Addis Ababa Chamber of Commerce. Find addresses, contact info, and membership levels.">
+    <link rel="stylesheet" href="styles/discover.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navigation">
-        <button id="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="discover.html">Discover</a></li>
-            <li><a href="directory.html" class="active">Directory</a></li>
-        </ul>
-    </nav>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <a href="index.html" class="logo">Addis Ababa Chamber</a>
+        <button id="menu-btn" aria-label="Toggle Menu">☰</button>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- View Toggle Buttons -->
-    <div class="view-toggle">
-        <button id="grid-view" aria-label="Grid View">Grid View</button>
-        <button id="list-view" aria-label="List View">List View</button>
-    </div>
+    <main>
+        <section class="directory-grid">
+            <h2>Chamber Member Directory</h2>
+            <div class="grid-container" id="members-container">
+                <!-- Cards will be generated here by JS -->
+            </div>
+        </section>
+    </main>
 
-    <!-- Members Container -->
-    <div id="members-container" class="grid"></div>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="year"></span> Zelalem Eshetu | WDD 231</p>
-        <p>Last modified: <span id="last-modified"></span></p>
-        <p>Contact: <a href="mailto:zelalemeshetubeshah@gmail.com">zelalemeshetubeshah@gmail.com</a></p>
+        <p>&copy; 2025 Addis Ababa Chamber of Commerce</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/scripts.js"></script>
+    <!-- JS -->
+    <script src="scripts/directory.js"></script>
 </body>
 
 </html>
