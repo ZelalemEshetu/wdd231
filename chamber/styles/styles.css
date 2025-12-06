@@ -1,210 +1,163 @@
-/* =========================
-   General Styles
-========================= */
+/* ===== GENERAL ===== */
 body {
-    background-color: #f0f0f0;
-    color: #333;
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* =========================
-   Header
-========================= */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== HEADER & NAV ===== */
 header {
     background-color: #004080;
     color: white;
-    padding: 1rem;
-}
-
-header h1 {
-    margin: 0;
-}
-
-/* =========================
-   Navigation
-========================= */
-.navigation {
-    background-color: #004080;
     padding: 0.5rem 1rem;
 }
 
-.navigation ul {
+header .navigation {
     display: flex;
-    gap: 1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navigation li a {
+header .navigation a {
+    margin: 0 0.5rem;
     color: white;
-    text-decoration: none;
-}
-
-.navigation li a.active {
     font-weight: bold;
-    text-decoration: underline;
 }
 
-.navigation button {
+#menu-btn {
     display: none;
-    background-color: #0066cc;
-    color: white;
+    font-size: 1.5rem;
+    background: none;
     border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 4px;
+    color: white;
 }
 
-/* =========================
-   Footer
-========================= */
-footer {
-    background-color: #222;
-    color: #eee;
+/* ===== HERO ===== */
+.hero {
+    position: relative;
     text-align: center;
-    padding: 1rem;
+    color: white;
 }
 
-/* =========================
-   Members Container
-========================= */
-#members-container {
-    padding: 1rem;
-    gap: 1rem;
-}
-
-/* =========================
-   Grid View
-========================= */
-#members-container.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-/* =========================
-   Member Card
-========================= */
-.member-card {
-    border: 1px solid #ccc;
-    background-color: white;
-    padding: 1rem;
-    box-sizing: border-box;
-    border-radius: 6px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.member-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.member-card img.member-logo {
-    max-width: 100%;
+.hero img {
+    width: 100%;
     height: auto;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-}
-
-/* =========================
-   List View
-========================= */
-#members-container.list {
     display: block;
 }
 
-.list .member-card {
-    border-bottom: 1px solid #ccc;
-    width: 100%;
+.hero h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px black;
+}
+
+.cta-button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcc00;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* ===== CURRENT EVENTS & WEATHER ===== */
+.current-events,
+.weather,
+.spotlights {
+    padding: 2rem 1rem;
+}
+
+.current-events h2,
+.weather h2,
+.spotlights h2 {
+    color: #004080;
     margin-bottom: 1rem;
 }
 
-/* =========================
-   Responsive Navigation
-========================= */
+/* ===== SPOTLIGHT CARDS ===== */
+.spotlights {
+    background-color: #f0f0f0;
+}
+
+#spotlight-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card img {
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.learn-btn {
+    margin-top: 0.5rem;
+    background-color: #004080;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
-    .navigation ul {
-        flex-direction: column;
+    #menu-btn {
+        display: block;
+    }
+
+    .navigation a {
         display: none;
     }
 
-    .navigation.show ul {
-        display: flex;
-    }
-
-    .navigation button {
-        display: inline-block;
+    #nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
         margin-top: 0.5rem;
     }
-}
 
-/* =========================
-   Mobile Adjustments
-========================= */
-@media (max-width: 480px) {
-    .view-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        margin: 1rem 0;
-    }
-
-    .view-toggle button {
-        width: 100%;
-    }
-}
-
-/* ===== WEATHER SECTION ===== */
-.weather {
-    background: #e0f0ff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.weather h2 {
-    margin-bottom: 15px;
-    color: #0078D7;
-}
-
-.weather p {
-    font-size: 1.1rem;
-    margin: 5px 0;
-}
-
-.weather ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-}
-
-.weather ul li {
-    background: #fff;
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Weather Section */
-@media (max-width: 768px) {
-    .weather {
-        width: 90%;
-        padding: 15px;
-    }
-
-    .weather h2 {
-        font-size: 1.5rem;
-    }
-
-    .weather p {
-        font-size: 1rem;
+    #nav-list li {
+        margin: 0.5rem 0;
     }
 }

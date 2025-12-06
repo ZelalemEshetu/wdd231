@@ -1,51 +1,77 @@
-// ========================
-// WEATHER SECTION WITH FALLBACK
-// ========================
-const weatherApiKey = '918a029e1018cbc9beaf59fd3eb43af7'; // <-- my API KEY-->
-const city = 'Addis Ababa,ET'; // City name and country code
-const weatherDescEl = document.getElementById('weather-desc');
-const weatherTempEl = document.getElementById('weather-temp');
-const forecastEl = document.getElementById('forecast');
+// ===== NAV MENU TOGGLE =====
+const menuBtn = document.getElementById("menu-btn");
+const navList = document.getElementById("nav-list");
+
+menuBtn.addEventListener("click", () => {
+    navList.style.display = navList.style.display === "flex" ? "none" : "flex";
+});
+
+// ===== WEATHER API =====
+const weatherDesc = document.getElementById("weather-desc");
+const weatherTemp = document.getElementById("weather-temp");
+const forecastList = document.getElementById("forecast");
+
+// Replace with your OpenWeatherMap API key
+const apiKey = "YOUR_API_KEY";
+const city = "Addis Ababa";
+const units = "metric";
 
 async function getWeather() {
     try {
-        // Fetch 5-day forecast data from OpenWeatherMap
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=en&appid=${weatherApiKey}`);
-        if (!res.ok) throw new Error('API request failed');
-        const data = await res.json();
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`);
+        const data = await response.json();
 
-        // Current weather (first item in list)
+        // Current weather
         const current = data.list[0];
-        weatherDescEl.textContent = current.weather[0].description;
-        weatherTempEl.textContent = `Temperature: ${current.main.temp.toFixed(1)} °C`;
+        weatherDesc.textContent = `Current: ${current.weather[0].description}`;
+        weatherTemp.textContent = `Temperature: ${current.main.temp.toFixed(1)}°C`;
 
-        // 3-Day Forecast (next 3 days at noon)
-        forecastEl.innerHTML = '';
-        const daysAdded = new Set();
-        for (let i = 0; i < data.list.length; i++) {
-            const dt = new Date(data.list[i].dt_txt);
-            const dateStr = dt.toLocaleDateString();
-            if (!daysAdded.has(dateStr) && dt.getHours() === 12 && daysAdded.size < 3) {
-                daysAdded.add(dateStr);
-                const li = document.createElement('li');
-                li.textContent = `${dateStr}: ${data.list[i].main.temp.toFixed(1)} °C, ${data.list[i].weather[0].description}`;
-                forecastEl.appendChild(li);
-            }
+        // 3-day forecast (every 8th item is approx. 24h interval)
+        forecastList.innerHTML = "";
+        for (let i = 8; i <= 24; i += 8) {
+            const day = data.list[i];
+            const li = document.createElement("li");
+            li.textContent = `${new Date(day.dt * 1000).toLocaleDateString()}: ${day.weather[0].description}, ${day.main.temp.toFixed(1)}°C`;
+            forecastList.appendChild(li);
         }
-
     } catch (err) {
-        console.warn('Weather API failed, using fallback data:', err);
+        weatherDesc.textContent = "Weather data not available.";
+        console.error(err);
+    }
+}
+getWeather();
 
-        // Fallback sample data
-        weatherDescEl.textContent = "Clear sky";
-        weatherTempEl.textContent = "Temperature: 25 °C";
-        forecastEl.innerHTML = `
-            <li>Dec 2: 25 °C, Clear sky</li>
-            <li>Dec 3: 26 °C, Partly cloudy</li>
-            <li>Dec 4: 27 °C, Light rain</li>
-        `;
+// ===== SPOTLIGHT MEMBERS =====
+const spotlightContainer = document.getElementById("spotlight-list");
+
+async function loadSpotlights() {
+    try {
+        const response = await fetch("data/members.json");
+        const members = await response.json();
+
+        // Filter Gold/Silver members
+        const filtered = members.filter(m => m.membership === "Gold" || m.membership === "Silver");
+
+        // Shuffle and pick 2–3 members
+        const shuffled = filtered.sort(() => 0.5 - Math.random());
+        const spotlightMembers = shuffled.slice(0, 3);
+
+        spotlightMembers.forEach(member => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <img src="images/${member.logo.split('/').pop()}" alt="${member.company}" loading="lazy">
+                <h3>${member.company}</h3>
+                <p><strong>Address:</strong> ${member.address}</p>
+                <p><strong>Phone:</strong> ${member.phone}</p>
+                <p><strong>Membership:</strong> ${member.membership}</p>
+                <a href="${member.website}" target="_blank" class="learn-btn">Learn More</a>
+            `;
+            spotlightContainer.appendChild(card);
+        });
+    } catch (err) {
+        console.error("Error loading spotlight members:", err);
     }
 }
 
-// Call the function
-getWeather();
+loadSpotlights();

@@ -13,7 +13,7 @@
     <meta property="og:title" content="Addis Ababa Chamber of Commerce | Connecting Businesses">
     <meta property="og:description"
         content="Join the Addis Ababa Chamber of Commerce to network, grow your business, and strengthen the local economy.">
-    <meta property="og:image" content="https://zelalemeshetu.github.io/wdd231/images/hero.jpeg">
+    <meta property="og:image" content="https://zelalemeshetu.github.io/wdd231/images/hero.webp">
     <meta property="og:url" content="https://zelalemeshetu.github.io/wdd231/chamber/index.html">
 
     <!-- Google Fonts -->
@@ -32,18 +32,23 @@
 <body>
 
     <header>
-        <nav class="navigation">
-            <a href="index.html">Home</a>
-            <a href="directory.html">Directory</a>
-            <a href="join.html">Join the Chamber</a>
-            <a href="mailto:zelalemeshetubeshah@gmail.com">Contact</a>
+        <a href="index.html" class="logo">Addis Ababa Chamber</a>
+        <button id="menu-btn" aria-label="Toggle Menu">☰</button>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <img src="images/hero.jpg" alt="Chamber Hero Image">
+            <img src="images/hero.webp" alt="Chamber Hero Image" loading="lazy">
             <h1>Welcome to the Addis Ababa Chamber of Commerce</h1>
             <a href="join.html" class="cta-button">Join the Chamber</a>
         </section>
@@ -58,17 +63,17 @@
         <!-- Weather Section -->
         <section class="weather">
             <h2>Weather in Addis Ababa</h2>
-            <p id="weather-desc"></p>
+            <p id="weather-desc">Loading weather...</p>
             <p id="weather-temp"></p>
             <ul id="forecast"></ul>
         </section>
 
-        <!-- Company Spotlights -->
+        <!-- Member Spotlights -->
         <section class="spotlights">
             <h2>Member Spotlights</h2>
-            <ul id="spotlight-list">
+            <div class="grid-container" id="spotlight-list">
                 <!-- JS will fill spotlight cards here -->
-            </ul>
+            </div>
         </section>
     </main>
 
