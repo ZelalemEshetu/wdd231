@@ -1,77 +1,85 @@
-// ===== NAV MENU TOGGLE =====
+// ==========================
+// NAV MENU TOGGLE (Optional)
+// ==========================
 const menuBtn = document.getElementById("menu-btn");
 const navList = document.getElementById("nav-list");
 
-menuBtn.addEventListener("click", () => {
-    navList.style.display = navList.style.display === "flex" ? "none" : "flex";
-});
+if (menuBtn && navList) {
+    menuBtn.addEventListener("click", () => {
+        navList.style.display = navList.style.display === "flex" ? "none" : "flex";
+    });
+}
 
-// ===== WEATHER API =====
+// ==========================
+// WEATHER SECTION
+// ==========================
+const apiKey = "918a029e1018cbc9beaf59fd3eb43af7"; // <-- Replace with your key
+const city = "Addis Ababa";
+
 const weatherDesc = document.getElementById("weather-desc");
 const weatherTemp = document.getElementById("weather-temp");
 const forecastList = document.getElementById("forecast");
 
-// Replace with your OpenWeatherMap API key
-const apiKey = "YOUR_API_KEY";
-const city = "Addis Ababa";
-const units = "metric";
-
 async function getWeather() {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`);
-        const data = await response.json();
-
         // Current weather
-        const current = data.list[0];
-        weatherDesc.textContent = `Current: ${current.weather[0].description}`;
-        weatherTemp.textContent = `Temperature: ${current.main.temp.toFixed(1)}°C`;
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
+        const data = await res.json();
+        weatherDesc.textContent = `Weather: ${data.weather[0].description}`;
+        weatherTemp.textContent = `Current Temp: ${data.main.temp}°C`;
 
-        // 3-day forecast (every 8th item is approx. 24h interval)
+        // 3-day forecast (8 * 3 ~ every 24 hours)
+        const resForecast = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=24&appid=${apiKey}`);
+        const forecastData = await resForecast.json();
+
         forecastList.innerHTML = "";
-        for (let i = 8; i <= 24; i += 8) {
-            const day = data.list[i];
+        for (let i = 7; i < forecastData.list.length; i += 8) {
             const li = document.createElement("li");
-            li.textContent = `${new Date(day.dt * 1000).toLocaleDateString()}: ${day.weather[0].description}, ${day.main.temp.toFixed(1)}°C`;
+            li.textContent = `${new Date(forecastData.list[i].dt * 1000).toLocaleDateString()}: ${forecastData.list[i].main.temp}°C, ${forecastData.list[i].weather[0].description}`;
             forecastList.appendChild(li);
         }
     } catch (err) {
-        weatherDesc.textContent = "Weather data not available.";
         console.error(err);
+        weatherDesc.textContent = "Weather data not available.";
+        weatherTemp.textContent = "";
+        forecastList.innerHTML = "<li>Forecast not available</li>";
     }
 }
+
 getWeather();
 
-// ===== SPOTLIGHT MEMBERS =====
+// ==========================
+// SPOTLIGHT CARDS
+// ==========================
 const spotlightContainer = document.getElementById("spotlight-list");
 
-async function loadSpotlights() {
-    try {
-        const response = await fetch("data/members.json");
-        const members = await response.json();
+fetch("data/members.json")
+    .then(res => res.json())
+    .then(data => {
+        // Filter Gold or Silver members
+        const spotlightMembers = data.filter(m => m.membership === "Gold" || m.membership === "Silver");
 
-        // Filter Gold/Silver members
-        const filtered = members.filter(m => m.membership === "Gold" || m.membership === "Silver");
+        // Shuffle array for random selection
+        const shuffled = spotlightMembers.sort(() => 0.5 - Math.random());
 
-        // Shuffle and pick 2–3 members
-        const shuffled = filtered.sort(() => 0.5 - Math.random());
-        const spotlightMembers = shuffled.slice(0, 3);
+        // Select 2 or 3 members
+        const selected = shuffled.slice(0, 3);
 
-        spotlightMembers.forEach(member => {
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.innerHTML = `
-                <img src="images/${member.logo.split('/').pop()}" alt="${member.company}" loading="lazy">
-                <h3>${member.company}</h3>
-                <p><strong>Address:</strong> ${member.address}</p>
-                <p><strong>Phone:</strong> ${member.phone}</p>
-                <p><strong>Membership:</strong> ${member.membership}</p>
-                <a href="${member.website}" target="_blank" class="learn-btn">Learn More</a>
+        // Build spotlight cards
+        selected.forEach(member => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <div class="spotlight-card">
+                    <img src="images/${member.logo.split('/').pop()}" alt="${member.company}" loading="lazy">
+                    <h3>${member.company}</h3>
+                    <p><strong>Address:</strong> ${member.address}</p>
+                    <p><strong>Phone:</strong> ${member.phone}</p>
+                    <p><strong>Membership:</strong> ${member.membership}</p>
+                    <a href="${member.website}" target="_blank">Learn More</a>
+                </div>
             `;
-            spotlightContainer.appendChild(card);
+            spotlightContainer.appendChild(li);
         });
-    } catch (err) {
-        console.error("Error loading spotlight members:", err);
-    }
-}
+    })
+    .catch(err => console.error("Error loading members.json:", err));
 
-loadSpotlights();
