@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Zelalem Chamber — Home</title>
+    <link rel="stylesheet" href="css/project.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">Zelalem Chamber</a>
+            <button id="hamburger" class="hamburger" aria-label="Open menu">☰</button>
+            <nav id="nav" class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Welcome to Zelalem Chamber</h1>
+            <p>Connecting businesses, building community.</p>
+            <div class="hero-actions">
+                <a class="btn" href="products.html">View Directory</a>
+                <a class="btn outline" href="join.html">Apply to Join</a>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <article class="card">
+                <h3>Events</h3>
+                <p>Monthly networking and training for members.</p>
+            </article>
+            <article class="card">
+                <h3>Support</h3>
+                <p>Small business mentoring and local resources.</p>
+            </article>
+            <article class="card">
+                <h3>Directory</h3>
+                <p>Search 15+ verified businesses and services.</p>
+            </article>
+        </section>
+
+        <section class="dynamic-preview">
+            <h2>Featured Businesses</h2>
+            <div id="preview-grid" class="grid"></div>
+        </section>
+    </main>
+
+    <dialog id="welcomeDialog" class="dialog">
+        <form method="dialog">
+            <h3>Welcome</h3>
+            <p>Thanks for visiting Zelalem Chamber. Would you like to view the directory?</p>
+            <menu>
+                <button id="viewDir">View Directory</button>
+                <button id="closeDialog">Close</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Zelalem Chamber — All rights reserved</p>
+            <p>Visits: <span id="visitsCount">0</span></p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

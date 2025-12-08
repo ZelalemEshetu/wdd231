@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Join — Zelalem Chamber</title>
+    <link rel="stylesheet" href="css/project.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">Zelalem Chamber</a>
+            <button id="hamburger" class="hamburger" aria-label="Open menu">☰</button>
+            <nav id="nav" class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Directory</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Apply to Join</h1>
+        <form id="joinForm" action="thanks.html" method="GET" class="form">
+            <label>
+                Business Name
+                <input name="business" required />
+            </label>
+            <label>
+                Owner Name
+                <input name="owner" required />
+            </label>
+            <label>
+                Email
+                <input type="email" name="email" required />
+            </label>
+            <label>
+                Category
+                <select name="category" required>
+                    <option>Retail</option>
+                    <option>Services</option>
+                    <option>Food & Drink</option>
+                    <option>Education</option>
+                </select>
+            </label>
+            <div class="form-actions">
+                <button type="submit" class="btn">Submit Application</button>
+                <button type="reset" class="btn outline">Reset</button>
+            </div>
+        </form>
+
+        <section>
+            <h2>Save draft</h2>
+            <p>You can save this form to local storage and resume later.</p>
+            <button id="saveDraft" class="btn outline">Save Draft</button>
+            <button id="loadDraft" class="btn">Load Draft</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Zelalem Chamber</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/form.js"></script>
+</body>
+
+</html>

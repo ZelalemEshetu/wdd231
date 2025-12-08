@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "name": "Addis Books",
+        "category": "Retail",
+        "price": 12.99,
+        "stock": 10,
+        "description": "Local bookstore with stationery.",
+        "contact": "+251-900-111"
+    },
+    {
+        "id": 2,
+        "name": "Melat Textiles",
+        "category": "Retail",
+        "price": 25.00,
+        "stock": 7,
+        "description": "Quality fabrics and tailoring.",
+        "contact": "+251-900-112"
+    },
+    {
+        "id": 3,
+        "name": "City Cafe",
+        "category": "Food & Drink",
+        "price": 4.50,
+        "stock": 50,
+        "description": "Coffee and light meals.",
+        "contact": "+251-900-113"
+    },
+    {
+        "id": 4,
+        "name": "Green Growers",
+        "category": "Services",
+        "price": 15.00,
+        "stock": 20,
+        "description": "Landscaping and gardening.",
+        "contact": "info@greengrow.com"
+    },
+    {
+        "id": 5,
+        "name": "Tech Tutors",
+        "category": "Education",
+        "price": 30.00,
+        "stock": 12,
+        "description": "Computer lessons and workshops.",
+        "contact": "+251-900-114"
+    },
+    {
+        "id": 6,
+        "name": "Blue Logistics",
+        "category": "Services",
+        "price": 120.00,
+        "stock": 5,
+        "description": "Delivery and transport.",
+        "contact": "+251-900-115"
+    },
+    {
+        "id": 7,
+        "name": "Fresh Bites",
+        "category": "Food & Drink",
+        "price": 6.00,
+        "stock": 40,
+        "description": "Quick healthy meals.",
+        "contact": "order@freshbites.com"
+    },
+    {
+        "id": 8,
+        "name": "Handmade Crafts",
+        "category": "Retail",
+        "price": 18.00,
+        "stock": 15,
+        "description": "Local artisan gifts",
+        "contact": "+251-900-116"
+    },
+    {
+        "id": 9,
+        "name": "Learning Hub",
+        "category": "Education",
+        "price": 45.00,
+        "stock": 8,
+        "description": "After school programs.",
+        "contact": "hello@learninghub.com"
+    },
+    {
+        "id": 10,
+        "name": "Spark IT",
+        "category": "Services",
+        "price": 55.00,
+        "stock": 9,
+        "description": "Small business IT support.",
+        "contact": "support@sparkit.com"
+    },
+    {
+        "id": 11,
+        "name": "Healthy Living",
+        "category": "Retail",
+        "price": 20.00,
+        "stock": 22,
+        "description": "Wellness products and supplements.",
+        "contact": "+251-900-117"
+    },
+    {
+        "id": 12,
+        "name": "Corner Bakery",
+        "category": "Food & Drink",
+        "price": 3.50,
+        "stock": 60,
+        "description": "Breads and pastries.",
+        "contact": "+251-900-118"
+    },
+    {
+        "id": 13,
+        "name": "Office Supplies Co",
+        "category": "Retail",
+        "price": 9.99,
+        "stock": 30,
+        "description": "Stationery and office supplies.",
+        "contact": "sales@offsup.com"
+    },
+    {
+        "id": 14,
+        "name": "SafeGuard Security",
+        "category": "Services",
+        "price": 250.00,
+        "stock": 3,
+        "description": "Security installations and patrols.",
+        "contact": "+251-900-119"
+    },
+    {
+        "id": 15,
+        "name": "Event Masters",
+        "category": "Services",
+        "price": 500.00,
+        "stock": 2,
+        "description": "Event planning and coordination.",
+        "contact": "events@master.com"
+    }
+]
