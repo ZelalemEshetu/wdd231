@@ -1,220 +1,148 @@
-/* project.css - Chamber of Commerce style (responsive, accessible) */
-
-/* --- Base / reset --- */
-:root {
-    --brand: #0b6fbf;
-    --muted: #666;
-    --bg: #f7f9fb;
-    --card: #ffffff;
-    --gap: 1rem;
-    --maxw: 1100px;
-    --radius: 12px;
-    font-size: 16px;
-}
-
+/* Reset some default styles */
 * {
-    box-sizing: border-box
-}
-
-html,
-body {
-    height: 100%
-}
-
-body {
+    box-sizing: border-box;
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: var(--bg);
-    color: #222;
-    line-height: 1.45;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 1rem
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* header */
+/* Header */
 .site-header {
-    background: linear-gradient(90deg, #e9f3fb, var(--bg));
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06)
+    background-color: #004080;
+    color: #fff;
+    padding: 1rem 0;
 }
 
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem
-}
-
-.brand {
-    font-weight: 700;
-    color: var(--brand);
-    text-decoration: none;
-    font-size: 1.25rem
-}
-
-.hamburger {
-    display: none;
-    background: none;
-    border: 0;
-    font-size: 1.4rem;
-    padding: .25rem
+.site-header .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
 }
 
 .nav ul {
+    list-style: none;
     display: flex;
     gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 0
 }
 
 .nav a {
-    color: #0b3a5a;
-    text-decoration: none;
-    padding: .5rem;
-    border-radius: 8px
+    color: #fff;
+    padding: 0.5rem;
 }
 
-.nav a.active,
-.nav a:hover {
-    background: rgba(11, 111, 191, 0.12)
+.nav a.active {
+    border-bottom: 2px solid #ffcc00;
 }
 
-/* hero */
-.hero {
-    padding: 2rem 0;
-    text-align: center
+/* Hamburger for small screens */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
 
-.hero h1 {
-    margin: .2rem 0;
-    font-size: 2rem
-}
-
-.hero p {
-    color: var(--muted);
-    margin: .5rem 0 1rem
-}
-
-.btn {
-    display: inline-block;
-    padding: .6rem 1rem;
-    border-radius: 10px;
-    background: var(--brand);
-    color: white;
-    text-decoration: none;
-    border: 0
-}
-
-.btn.outline {
-    background: transparent;
-    border: 1px solid var(--brand);
-    color: var(--brand);
-}
-
-/* grid & cards */
-.grid {
-    display: grid;
-    gap: 1rem
-}
-
-@media(min-width:700px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr)
-    }
-}
-
-.card {
-    background: var(--card);
-    padding: 1rem;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 18px rgba(10, 30, 60, 0.06)
-}
-
-.highlights {
-    display: grid;
-    gap: 1rem;
-    margin: 2rem 0
-}
-
-@media(min-width:700px) {
-    .highlights {
-        grid-template-columns: repeat(3, 1fr)
-    }
-}
-
-/* product cards */
-.product-card {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem
-}
-
-.product-card ul {
-    margin: 0;
-    padding-left: 1rem;
-    color: var(--muted)
-}
-
-.controls {
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-    margin: 1rem 0
-}
-
-.controls input,
-.controls select {
-    padding: .5rem;
-    border-radius: 8px;
-    border: 1px solid #ddd
-}
-
-/* responsive */
-@media(max-width:700px) {
-    .nav {
-        position: absolute;
-        right: 1rem;
-        top: 64px;
-        background: var(--card);
-        padding: 1rem;
-        border-radius: 8px;
+@media screen and (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
         display: none;
-        box-shadow: 0 8px 30px rgba(10, 30, 60, 0.12)
+    }
+
+    .nav ul.show {
+        display: flex;
     }
 
     .hamburger {
-        display: inline-block
-    }
-
-    .nav.open {
-        display: block
-    }
-
-    .header-inner {
-        position: relative
-    }
-
-    .grid {
-        grid-template-columns: 1fr
+        display: block;
     }
 }
 
-/* footer */
-.site-footer {
-    margin-top: 2rem;
-    padding: 1rem 0;
-    color: var(--muted);
-    text-align: center
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: url('../images/hero.webp') no-repeat center/cover;
+    color: #fff;
 }
 
-/* dialog */
-.dialog {
+.hero h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.hero-actions .btn {
+    margin: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #ffcc00;
     border: none;
-    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hero-actions .btn.outline {
+    background: transparent;
+    border: 2px solid #ffcc00;
+}
+
+/* Cards */
+.card {
+    background-color: #fff;
     padding: 1rem;
-    box-shadow: 0 12px 40px rgba(10, 30, 60, 0.2)
+    margin: 1rem 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Forms */
+.form label {
+    display: block;
+    margin: 0.8rem 0 0.2rem;
+}
+
+.form input,
+.form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
 }

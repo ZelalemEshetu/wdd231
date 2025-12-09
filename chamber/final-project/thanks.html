@@ -5,7 +5,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Thanks — Zelalem Chamber</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/myfavicon.ico">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/project.css" />
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Thank you for applying to join Zelalem Chamber. Your application has been received and will be reviewed.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Thanks — Zelalem Chamber">
+    <meta property="og:description"
+        content="Thank you for applying to join Zelalem Chamber. Your application has been received and will be reviewed.">
+    <meta property="og:image" content="images/hero.webp">
+    <meta property="og:url" content="thanks.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thanks — Zelalem Chamber">
+    <meta name="twitter:description"
+        content="Thank you for applying to join Zelalem Chamber. Your application has been received and will be reviewed.">
+    <meta name="twitter:image" content="images/hero.webp">
 </head>
 
 <body>
@@ -51,7 +75,8 @@
         } else {
             container.textContent = 'No form data found.';
         }
-        // mark year
+
+        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <script type="module" src="js/main.js"></script>
