@@ -2,7 +2,7 @@
 
 const products = [
     { name: "Cafe Aroma", desc: "A cozy coffee shop with pastries", category: "Food & Drink", price: "$", stock: "Open", image: "images/business1.jpeg" },
-    { name: "Tech Solutions", desc: "IT and software services", category: "Services", price: "$$", stock: "Available", image: "images/business2.jpeg" },
+    { name: "Tech Solutions", desc: "IT and software services", category: "Services", price: "$$", stock: "Available", image: "images/busines2.jpeg" },
     { name: "Book World", desc: "Books and stationery store", category: "Retail", price: "$", stock: "Available", image: "images/business3.jpeg" },
     { name: "Fresh Mart", desc: "Grocery and daily essentials", category: "Retail", price: "$$", stock: "Open", image: "images/business4.jpeg" },
     { name: "Edu Center", desc: "Tutoring and training services", category: "Education", price: "$$$", stock: "Open", image: "images/business5.jpeg" },
