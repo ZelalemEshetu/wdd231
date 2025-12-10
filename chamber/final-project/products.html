@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Directory — Zelalem Chamber</title>
 
     <!-- Favicon -->
     <link rel="icon" href="images/myfavicon.ico">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/project.css" />
+    <link rel="stylesheet" href="css/project.css">
 
     <!-- Meta Description -->
     <meta name="description"
@@ -52,13 +52,16 @@
         <h1>Business Directory</h1>
 
         <div class="controls">
-            <input id="search" placeholder="Search businesses..." />
+            <input id="search" placeholder="Search businesses...">
             <select id="categoryFilter">
                 <option value="all">All categories</option>
             </select>
         </div>
 
-        <section id="productGrid" class="grid"></section>
+        <section id="productGrid" class="grid">
+            <h2>Featured Businesses</h2>
+            <!-- Product cards will be inserted here dynamically -->
+        </section>
 
         <template id="productTemplate">
             <article class="card product-card">
